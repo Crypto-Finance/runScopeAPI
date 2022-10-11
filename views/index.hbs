@@ -6,5 +6,88 @@
   </head>
   <body>
     <h1>Welcome to {{title}} </h1>
+    <h2>Instructions</h2>
+    <p>
+      In order to post a new strategy to the DB, choose one for each options. 
+    </p>
+    <div class="container">
+      <div class="jumbotron">
+        <h2>New strategy</h1>
+        <br />
+        <form id="runScope" class="form" method="POST" action="/" role="form" autocomplete="off">
+          <div class="form-group">
+            <p>coin:</p>
+            <input id="BTC" type="radio" value="BTC" name="coin" required>
+            <label for="BTC">BTC</label>
+            <input id="ETH" type="radio" value="ETH" name="coin" required>
+            <label for="ETH">ETH</label>
+            <input id="ADA" type="radio" value="ADA" name="coin" required>
+            <label for="ADA">ADA</label>
+            <input id="AVAX" type="radio" value="AVAX" name="coin" required>
+            <label for="AVAX">AVAX</label>
+            <input id="MATIC" type="radio" value="MATIC" name="coin" required>
+            <label for="MATIC">MATIC</label>
+            <input id="SOL" type="radio" value="SOL" name="coin" required>
+            <label for="SOL">SOL</label>
+            <input id="ONE" type="radio" value="ONE" name="coin" required>
+            <label for="ONE">ONE</label>
+            <input id="MANA" type="radio" value="MANA" name="coin" required>
+            <label for="MANA">MANA</label>
+          </div>
+          <div class="form-group">
+            <p>pair:</p>
+            <input type="radio" id="USDT" value="USDT" name="pair" required>
+            <label for="USDT">USDT</label>
+          </div>
+          <div class="form-group">
+            <p>entryStrat:</p>
+            <input type="radio" id="bands" value="bands" name="entryStrat" required>
+            <label for="bands">bands</label>
+            <input type="radio" id="cross" value="cross" name="entryStrat" required>
+            <label for="cross">cross</label>
+            <input type="radio" id="mkTrends" value="mkTrends" name="entryStrat" required>
+            <label for="mkTrends">mkTrends</label>
+          </div>
+          <div class="form-group">
+            <p>exitStrat:</p>
+            <input type="radio" id="exitStaticSL" value="exitStaticSL" name="exitStrat" required>
+            <label for="exitStaticSL">exitStaticSL</label>
+            <input type="radio" id="exitDynamicSL" value="exitDynamicSL" name="exitStrat" required>
+            <label for="exitDynamicSL">exitDynamicSL</label>
+            <input type="radio" id="exitBollingBands" value="exitBollingBands" name="exitStrat" required>
+            <label for="exitBollingBands">exitBollingBands</label>
+          </div>
+          <div class="form-group">
+            <p>TP:</p>
+              <label for="tp">TP (between 5 and 30%):</label>
+              <input type="number" id="tp" name="TP" min="5" max="30" step="1" value="5" required>
+          </div>
+          <div class="form-group">
+            <p>SL:</p>
+              <label for="sl">SL (between 1 and 10%):</label>
+              <input type="number" id="sl" name="SL" min="1" max="10" step="1" value="1" required>
+          </div>
+          <div class="form-group">
+            <p>mainInterval:</p>
+            <input type="radio" id="5min" value="5min" name="mainInterval" required>
+            <label for="5min">5min</label>
+            <input type="radio" id="15min" value="15min" name="mainInterval" required>
+            <label for="15min">15min</label>
+            <input type="radio" id="30min" value="30min" name="mainInterval" required>
+            <label for="30min">30min</label>
+            <input type="radio" id="1h" value="1h" name="mainInterval" required>
+            <label for="1h">1h</label>
+            <input type="radio" id="2h" value="2h" name="mainInterval" required>
+            <label for="2h">2h</label>
+            <input type="radio" id="4h" value="4h" name="mainInterval" required>
+            <label for="4h">4h</label>
+            <input type="radio" id="1d" value="1d" name="mainInterval" required>
+            <label for="1d">1d</label>
+          </div><br>
+          <input type="submit" value="Submit new strategy" >
+        </form>
+      </div>
+    </div>
+    
   </body>
 </html>
