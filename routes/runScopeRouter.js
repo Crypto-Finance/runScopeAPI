@@ -9,9 +9,13 @@ const log = customLogs.getLogger('runScopeRouter')
 import createNewStrategy from '../controllers/runScopeController.js'
 
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Run Scope Modifier' });
+  res.render('createNewStrategy', { title: 'Run Scope: Create New Strategy' });
 });
 
 router.post('/', createNewStrategy)
+
+router.get('/currentRunScope', (req, res, next) => {
+  res.render('currentRunScope', { title: 'Run Scope: Current Run Scope'})
+})
 
 export default router;

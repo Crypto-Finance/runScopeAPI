@@ -3,6 +3,8 @@ import mainIntervalMapper from '../utils/mainIntervalHelpers.js'
 import customLogs from '../logging/logging.js'
 const log = customLogs.getLogger('runScopeController')
 
+import Strategy from '../models/strategy.js'
+
 async function createNewStrategy(req, res, next) {
     const runScope = req.body
     runScope.TP /= 100
