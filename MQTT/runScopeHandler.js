@@ -1,4 +1,4 @@
-import mqtt from './mqtt.js'
+import mqttClient from "./mqtt.js";
 import customLogs from "../logging/logging.js";
 
 const debugLog = customLogs.getLogger('runScopeHandler')

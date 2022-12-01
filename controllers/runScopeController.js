@@ -1,11 +1,17 @@
 import mainIntervalMapper from '../utils/mainIntervalHelpers.js'
+import mqttClient from "../MQTT/mqtt.js";
 
 import customLogs from '../logging/logging.js'
 const log = customLogs.getLogger('runScopeController')
 
 import Strategy from '../models/strategy.js'
 
-async function createNewStrategy(req, res, next) {
+export default async function getAllStrategies(req, res, next){
+
+    res.render('currentRunScope', { title: 'Run Scope: Current Run Scope', strategies})
+}
+
+export default async function createNewStrategy(req, res, next) {
     const runScope = req.body
     runScope.TP /= 100
     runScope.SL /= 100
@@ -19,8 +25,11 @@ async function createNewStrategy(req, res, next) {
     runScope.entryPeriod = mainIntervalMapper[runScope.mainInterval]
     runScope.exitPeriod = []
     runScope.exitInterval = []
-    log.info(JSON.stringify(runScope))
+    mqttClient.publish("runScopeAPI/actRunScope/orchestrator/newStrategy", JSON.stringify(runScope))
+    //TO SEE WHAT TO SEND BACK
     res.send(runScope)
 }
 
-export default createNewStrategy
+export default async function deleteStrategy(req, res, next) {
+
+}
