@@ -6,12 +6,11 @@ const log = customLogs.getLogger('runScopeController')
 
 import Strategy from '../models/strategy.js'
 
-export default async function getAllStrategies(req, res, next){
-
-    res.render('currentRunScope', { title: 'Run Scope: Current Run Scope', strategies})
+export async function getAllStrategies(req, res, next){
+    res.render('currentRunScope', { title: 'Run Scope: Current Run Scope'})
 }
 
-export default async function createNewStrategy(req, res, next) {
+export async function createNewStrategy(req, res, next) {
     const runScope = req.body
     runScope.TP /= 100
     runScope.SL /= 100
@@ -30,6 +29,6 @@ export default async function createNewStrategy(req, res, next) {
     res.send(runScope)
 }
 
-export default async function deleteStrategy(req, res, next) {
+export async function deleteStrategy(req, res, next) {
 
-}
+} 
